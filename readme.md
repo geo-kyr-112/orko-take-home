@@ -37,3 +37,27 @@ dotnet core 6 console app that takes a csv input file and a column name and outp
 
 - RFC 4180 csv standard
 - Case sensitivity handling for column names and sorting values
+
+### Docker
+
+`> docker build -t counter-image -f Dockerfile .`
+
+### Running in Docker
+
+`> docker run -it csv-parser input.csv City`
+
+`> docker run -it csv-parser input_notExists.csv City`
+
+- Will error due to csv file not existing
+
+`> docker run -it csv-parser input.csv BadColumn`
+
+- Will error due to column not existing
+
+`> docker run -it csv-parser input_badColumnCount.csv City`
+
+- Will error due to column count not matching header on multiple rows
+
+`> docker run -it csv-parser input_dupeHeader.csv City`
+
+- Will error due to multiple columns with the same name
