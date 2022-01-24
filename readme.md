@@ -40,6 +40,8 @@ dotnet core 6 console app that takes a csv input file and a column name and outp
 
 ### Docker
 
+`> dotnet publish -c Release`
+
 `> docker build -t counter-image -f Dockerfile .`
 
 ### Running in Docker
